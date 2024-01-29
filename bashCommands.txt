@@ -1,0 +1,27 @@
+nano [file] -> opens text editor for file in terminal
+cat [file] -> prints the content of a file in the teminal
+ln [file] [link/alias] -> makes hardlink/alias to file (does not break if original file is removed)
+ln -s [file -> makes a symnbolic link to a file (makes a reference to file path/links original file)
+head [file] -> reads first lines of a file
+tail [file] -> reads last lines of a file
+rm [file] -> removes file
+rm [file] [directory] -> removes file from given directory (directory given relative to current position)
+rmdir [file] -> removes empty directory
+rm -R [file] -> removes a directory and everything it contains (Warning!)
+mv [file] [directory]/[file] -> moves file to location, can be used to rename files (give new filename when moving)
+pwd -> shows current position in directory
+find ~[directory] -name "[file].[filetype]" -> searches directory for files of a certain name am filetype
+ | * = zero or more characters eg. *.html (returns any html documents)|
+ | ? = any one character eg. hello.??? (returns hello. jpg/png/fil/dat etc.)|
+ | [] = any characters in brackets eg. img[123].png (returns img1.png, img2.png and img3.png)|
+cd [directory]/ -> changes directory (eg. KEA/folder/, ../, ../../folder/)
+touch [file] -> "refreshes" files, or creates new file if the filename given does not exist
+mkdir [file] -> makes new directory
+cp [file] [location] -> copies and pastes file in location
+man -> shows manual (does not work on my machine)
+cat/less [file] -> reads file/reads file in pages format
+ls -> displays content of directory 
+ls -la -> displays content of directory in in vertically listed format
+ls -la [directory] -> displays content of given directory in vertically listed format
+clear -> clears terminal scrollback
+exit -> closes terminal instance
