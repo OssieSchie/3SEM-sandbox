@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div id="randomNmbDiv">
+            <div id="textScreen">
+                <h2 id="randomNmbField">???</h2>
+            </div>
+            <p>CodeMaster</p>
+        </div>
+        <div id="UXBox">
+            <input type="number" maxlength="3" max="100" min="0" id="userInput">
+            <div id="guessDiv"><h3>Guess</h3></div>
+        </div>
+        <div id="textBubble">
+            <p id="textBubbleP">Try cracking the CodeMaster, it only goes up to 100!</p>
+        </div>
+        <div id="restartContainer">
+            <p id="restartText">Restart</p>
+        </div>
+    </main>
+</body>
+</html>
+<script>
+    window.addEventListener("load", startGame)
+    
+    function startGame(){
+
+        document.querySelector("#restartContainer").classList.add("hide");
+        document.querySelector("#textBubbleP").innerText = "Try cracking the CodeMaster, it only goes up to 100!";
+        document.querySelector("#randomNmbField").innerText = "???";
+
+        const botNumber = Math.floor(Math.random()*100);
+        console.log(botNumber);
+        
+        
+        document.querySelector("#guessDiv").addEventListener("mousedown", checkGuess);
+        
+        function wrongAnswer(){
+            document.querySelector("#textBubble").classList.add("wrongAnswer");
+            document.querySelector("#textBubble").addEventListener("animationend", reset);
+            function reset(){
+                document.querySelector("#textBubble").classList.remove("wrongAnswer")
+            }
+        }
+
+        function rightAnswer(){
+            document.querySelector("#textBubble").classList.add("rightAnswer");
+            lockGuess();
+        }
+
+        function checkGuess(){
+            const userInput = document.querySelector("#userInput").value;
+            const userInputNum = parseFloat(userInput);
+
+            console.log(userInput);
+
+            if (botNumber === userInputNum){
+                console.log("You Guessed it!")
+                rightAnswer();
+                document.querySelector("#textBubbleP").innerText = "Perfect! You Guessed it!";
+                document.querySelector("#randomNmbField").innerText = botNumber;
+                restartBtn();
+            } else if (botNumber > userInputNum){
+                console.log("Too low, try again!")
+                wrongAnswer();
+                document.querySelector("#textBubbleP").innerText = "hmm, too low. try again!";
+            } else if (botNumber < userInputNum){
+                console.log("Too high, try again!")
+                wrongAnswer();
+                document.querySelector("#textBubbleP").innerText = "hmm, too high. try again!";
+            }
+        }
+        function lockGuess(){
+            document.querySelector("#guessDiv").removeEventListener("mousedown", checkGuess);
+        }
+
+        function restartBtn(){
+            document.querySelector("#restartContainer").classList.remove("hide");
+            document.querySelector("#restartContainer").addEventListener("click", startGame)
+
+        }
+    }
+    
+</script>
+<style>
+    body{
+        background-color: rgb(12, 10, 6);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    main{
+        width: 1000px;
+        height: 800px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: white;
+    }
+    #UXBox{
+        width: 200px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 15px;
+        border: solid rgb(61, 56, 56) 2px;
+        border-radius: 25px;
+        background-color: rgb(240, 230, 236);
+    }
+    #guessDiv{
+        width: 80px;
+        height: 80px;
+        border: solid rgb(138, 31, 31) 3px;
+        background-color: rgb(199, 164, 164);
+        border-radius: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        filter: drop-shadow(0 6px 3px rgba(43, 38, 40, 0.4));
+    }
+    #guessDiv:hover{
+        cursor: pointer;
+    }
+    #guessDiv h3{
+        font-family: monospace;
+        font-size: 180%;
+        color: rgb(138, 31, 31);
+        pointer-events: none;
+    }
+    #randomNmbDiv{
+        width: 200px;
+        height: 200px;
+        border: 3px rgb(175, 164, 164) outset;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center top; */
+        align-items: center;
+        background-color: rgb(240, 231, 231);
+    }
+
+    #randomNmbDiv p{
+        font-family: monospace;
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 120%;
+        text-decoration: underline;
+    }
+
+    #textScreen{
+        width: 170px;
+        height: 50px;
+        border: 3px rgb(175, 164, 164) inset ;
+        background-color: rgb(24, 23, 23);
+        margin-top: 10px;
+
+    }
+    #randomNmbField{
+        font-family: monospace;
+        color: rgb(0, 255, 0);
+        text-align: center;
+        justify-self: center;
+
+        animation-name: textBlink;
+        animation-duration: 0.7s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    @keyframes textBlink{
+        0%{
+            color: rgb(0, 0, 0)
+        }
+        40%{
+            color: rgb(0, 255, 0);
+        }
+        100%{
+            color: rgb(0, 255, 0)
+        }
+    }
+
+    #textBubble{
+        position: absolute;
+        width: 250px;
+        height: 220px;
+        border: solid black 1px;
+        border-radius: 45%;
+        background-color: rgb(255, 255, 255);
+        top: 35%;
+        right: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #textBubble p{
+       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+       font-size: 120%;
+       max-width: 200px;
+    }
+
+    .wrongAnswer{
+        animation-name: wrongAnswer;
+        animation-duration: 0.3s;
+        animation-timing-function: ease-out;
+        animation-iteration-count: 1;
+    }
+
+    @keyframes wrongAnswer{
+        0%{
+            background-color: rgb(255, 255, 255);
+        }
+        30%{
+            background-color: rgb(255, 130, 130);
+        }
+        70%{
+            background-color: rgb(255, 130, 130);
+        }
+        100%{
+            background-color: rgb(255, 255, 255);
+        }
+    }
+
+    .rightAnswer{
+        animation-name: rightAnswer;
+        animation-duration: 0.3s;
+        animation-timing-function: ease-out;
+        animation-iteration-count: 3;
+    }
+
+    @keyframes rightAnswer{
+        0%{
+            background-color: rgb(255, 255, 255);
+        }
+        30%{
+            background-color: rgb(151, 255, 142);
+        }
+        70%{
+            background-color: rgb(151, 255, 142);
+        }
+        100%{
+            background-color: rgb(255, 255, 255);
+        }
+    }
+
+    #restartContainer{
+        height: 200px;
+        width: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        background-color: rgb(147, 204, 135);
+        border: solid black 2px;
+        border-radius: 10px;
+        filter: drop-shadow(-5px 10px 6px rgba(0, 0, 0, 0.3));
+        top: 35%;
+        left: 25%;
+    }
+
+    #restartContainer:hover{
+        cursor: pointer;
+    }
+
+    #restartText{
+        font-family: monospace;
+        font-size: 170%;
+        writing-mode: vertical-lr;
+        text-orientation: upright;
+        margin: 0;
+        align-self: center;
+        pointer-events: none;
+    }
+
+    .hide{
+        visibility: hidden;
+    }
+    /* <div id="restartContainer">
+            <p id="restartText">Restart</p>
+        </div> */
+</style>
