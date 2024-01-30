@@ -1,7 +1,7 @@
 nano [file] -> opens text editor for file in terminal
 cat [file] -> prints the content of a file in the teminal
 ln [file] [link/alias] -> makes hardlink/alias to file (does not break if original file is removed)
-ln -s [file -> makes a symnbolic link to a file (makes a reference to file path/links original file)
+ln -s [file] -> makes a symnbolic link to a file (makes a reference to file path/links original file)
 head [file] -> reads first lines of a file
 tail [file] -> reads last lines of a file
 rm [file] -> removes file
