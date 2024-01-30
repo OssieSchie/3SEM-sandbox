@@ -18,7 +18,7 @@ cd [directory]/ -> changes directory (eg. KEA/folder/, ../, ../../folder/)
 touch [file] -> "refreshes" files, or creates new file if the filename given does not exist
 mkdir [file] -> makes new directory
 cp [file] [location] -> copies and pastes file in location
-man -> shows manual (does not work on my machine)
+man -> shows manual (does not work on my MSYS2 Terminal)
 cat/less [file] -> reads file/reads file in pages format
 ls -> displays content of directory 
 ls -la -> displays content of directory in in vertically listed format
