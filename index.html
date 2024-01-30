@@ -13,20 +13,33 @@
         <div>
             <a href="VariablesT11c\rndNmb\genererEtRandomTal.html"><h3>Generér et tilfældigt tal</h3></a>
         </div>
+        <div>
+            <a href="VariablesT11c\rndNmb\guessANumber.html"><h3>Gæt et tilfældigt tal</h3></a>
+        </div>
     </main>
 </body>
 </html>
 
 <style>
+    main{
+        display: flex;
+        flex-direction: row;
+        max-width: fit-content;
+        justify-content: space-evenly;
+    }
     div{
         width: 300px;
         height: 100px;
         border: solid grey 1px;
+        border-bottom: solid grey 3px;
         border-radius: 25px;
         text-align: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin: 15px;
+        filter: drop-shadow(3px 6px 4px rgba(20, 20, 20, 0.3));
+        background-color: white;
     }
     h3{
         display: inline;
