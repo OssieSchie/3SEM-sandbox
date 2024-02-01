@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div id="momsContainer">
+            <div id="displayMoms">
+                <h2 id="momsH2">???</h2>
+            </div>
+            <input type="number" id="userInput"> kr.</input>
+            <div id="genBtn">
+                <h3>Vis moms af beløb</h3>
+            </div>
+        </div>
+    </main>
+</body>
+<style>
+   
+
+    #momsContainer{
+        width: 200px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: solid black 1px;
+    }
+
+    input{
+        font-family: monospace;
+    }
+    #genBtn{
+        width: 120px;
+        height:50px;
+        border: solid black 1px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin-top: 20px;
+        background-color: rgb(207, 207, 207);
+    }
+    #genBtn h3{
+        margin: 0;
+        font-family: monospace;
+    }
+    #displayMoms{
+        width: 150px;
+        height: 65px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    #momsH2{
+        font-family: monospace;
+    }
+</style>
+<script>
+    const userInput = Number(document.querySelector("#userInput").value);
+    const moms = 0.25;
+    let momsValue;
+
+    document.querySelector("#genBtn").addEventListener("mousedown", genMoms);
+
+    function genMoms(){
+        momsValue = moms * userInput;
+        document.querySelector("#momsH2").textContent=momsValue;
+        console.log(momsValue)
+    }
+
+</script>
+</html>

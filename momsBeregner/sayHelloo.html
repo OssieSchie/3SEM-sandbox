@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main></main>
+</body>
+<script>
+    // "use strict";
+    
+    // sayHello("Joe", "Biden");
+    
+    // function sayHello(firstName, lastName){
+    //     console.log(`Hello ${firstName} ${lastName}`);
+    // }
+
+const hello = "hello";
+const rndNmb = Math.floor(Math.random()*2);
+console.log(rndNmb);
+
+
+    presentPet("Joe", 'Biden');
+    
+    function presentPet(firstName, animalName, animalType = "fat dog"){
+        if (rndNmb === 0){
+            animalType = "Parrot";
+        }
+        console.log(`My name is ${firstName}, i have a ${animalType} called ${animalName}`)
+    }
+</script>
+</html>
