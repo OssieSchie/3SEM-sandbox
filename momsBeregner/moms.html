@@ -63,13 +63,13 @@
 </style>
 <script>
     let userInput;
-    const moms = 0.25;
     let momsValue;
-
-    document.querySelector("#genBtn").addEventListener("mousedown", genMoms);
     
-    function genMoms(){
-        userInput =  parseFloat(document.querySelector("#userInput").value);
+    userInput =  parseFloat(document.querySelector("#userInput").value);
+
+    document.querySelector("#genBtn").addEventListener("mousedown",()=>{genMoms(userInput)} );
+    
+    function genMoms(userInput, moms = 0.25){
         momsValue = moms * userInput;
         document.querySelector("#momsH2").innerText=momsValue;
         console.log(momsValue)
