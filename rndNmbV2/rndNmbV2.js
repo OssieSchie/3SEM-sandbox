@@ -22,7 +22,7 @@ function startGame(){
         $("#congrats").classList.add("show");
         //$("#btn3").addEventListener("animationend", startGame);
         $("#congrats").classList.remove("show");
-        result = 50;
+        result = [50];
     
     }
     //---------------------------------------------------------------------------//

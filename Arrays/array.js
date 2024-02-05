@@ -26,7 +26,7 @@
 // people[1] = "Ginny"; //Replaces the second item with "Ginny"
 // result = people.push("Fred", "George"); //Adds Fred and George at the end of the array
 // result = people.indexOf("Cho"); //Returns position of item in array
-// result = people.splice(result, 1); //sets value of "reult" to item in array
+// result = people.splice(result, 1); //sets value of "result" to item in array
 // console.log("result", result);
 // console.log("people", people);
 //------------------------------------------
