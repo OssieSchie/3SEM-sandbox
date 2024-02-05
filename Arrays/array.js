@@ -29,50 +29,56 @@
 // result = people.splice(result, 1); //sets value of "result" to item in array
 // console.log("result", result);
 // console.log("people", people);
+
 //------------------------------------------
+
 //let alphabet = ["a", "b", "c", "d", "e", "f","g"];
-let str1 = "abcdefg";
-console.log(str1);
-let array1 = Array.from(str1); //creates array from input eg. string to indivisual array items
-console.log("array1", array1);
+//let str1 = "abcdefg";
+//console.log(str1);
+//let array1 = Array.from(str1); //creates array from input eg. string to indivisual array items
+//console.log("array1", array1);
 
-const array2 = str1.split("e"); //makes an array, splits items up by input in split(""). if nothing is given = Splits after every character
-console.log("array2", array2);
+//const array2 = str1.split("e"); //makes an array, splits items up by input in split(""). if nothing is given = Splits after every character
+//console.log("array2", array2);
 
-const array3 = [...str1];
-console.log("array3", array3)
+//const array3 = [...str1];
+//console.log("array3", array3)
+
 //--------------------------------------------
 
 //lav 4 sidste slides af præsentation "JavaScript 5"
 
+let arr1 = ["1", "2", "3", "4"];
+let string1 = arr1.join(""); //returns a string from an array
+console.log(string1);
 
 
 
 //-----------------from JavaScript 6--------------------
 
 
-const person3 = {
-    firstName:"Harry",
-    lastName:"Potter",
-    hired:false,
-};
-const person4 = {
-    firstName:"Fred",
-    lastName:"Weasly",
-    hired:false,
-};
+// const person3 = {
+//     firstName:"Harry",
+//     lastName:"Potter",
+//     hired:false,
+// };
+// const person4 = {
+//     firstName:"Fred",
+//     lastName:"Weasly",
+//     hired:false,
+// };
 
-function hire(person){
-    person.hired = true
-}
+// function hire(person){
+//     person.hired = true
+// }
 
-function fire(person){
-    person.hired = false
-}
+// function fire(person){
+//     person.hired = false
+// }
 
-function fireOrHire(action, person){
-    action(person);
-}
+// function fireOrHire(action, person){
+//     action(person);
+// }
 
-hire(person3);
-console.log(person3);
+// hire(person3);
+// console.log(person3);
