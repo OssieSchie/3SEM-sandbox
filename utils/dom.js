@@ -1,6 +1,6 @@
-export function DQS(selector){
+export function $(selector){
     return document.querySelector(selector);
 }
-export function DQSA(selector){
+export function $$(selector){
     return document.querySelectorAll(selector);
 }
