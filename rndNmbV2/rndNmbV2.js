@@ -18,11 +18,21 @@ function startGame(){
     
     $("#btn3").addEventListener("mousedown", epicWin);
     
-    function epicWin(){
+    function epicWin(){ //epicWin dur ikke, siger at den ikke er defined
+        $("#btn3").removeEventListener("mousedown", epicWin);
         $("#congrats").classList.add("show");
-        //$("#btn3").addEventListener("animationend", startGame);
-        $("#congrats").classList.remove("show");
-        result = [50];
+        $("#congrats").addEventListener("animationend", winning2);
+
+        function winning2(){
+            $("#congrats").classList.remove("show");
+            
+            result = currGuess.splice(0, 1, 50);
+            $("#compGuess").innerText = currGuess;
+    
+            $("#btn3").addEventListener("mousedown", epicWin);
+        }
+        
+        return "epic win dude!";
     
     }
     //---------------------------------------------------------------------------//
