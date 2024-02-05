@@ -8,7 +8,7 @@
 
 .show{
     animation-name: showWin;
-    animation-duration: 4s;
+    animation-duration: 3s;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
 }
@@ -16,11 +16,13 @@
 @keyframes showWin{
     0%{
         color: rgb(255, 255, 255);
+        background-color: rgba(0, 255, 0, 0);
     }
     30%{
         color: rgb(0, 0, 0);
     }
     100%{
         color: rgb(0, 0, 0);
+        background-color: rgba(0, 255, 0, 0.8);
     }
 }
