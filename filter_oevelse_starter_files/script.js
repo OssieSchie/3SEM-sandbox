@@ -1,4 +1,4 @@
-//window.addEventListener("load", ()=>{showTheseVehicles(allVehi)});
+window.addEventListener("load", ()=>{showTheseVehicles(allVehi)});
 //^Tilføj hvis jeg finder ud af hvordan man fjerner tidligere arrays^
 
 const vehicles = [
@@ -25,7 +25,7 @@ function callButton(evt){
   }else if(evt.currentTarget.dataset.filter==="2sea"){
     showTheseVehicles(seats);
   }else if(evt.currentTarget.dataset.filter==="jona"){
-    showTheseVehicles(seats);
+    showTheseVehicles(jonasVehi);
   }else{
     showTheseVehicles(showRye);
   }
@@ -88,34 +88,44 @@ const ulPointer = document.querySelector("ul");
 // showTheseVehicles(vehicles);
 
 function showTheseVehicles(arr) {
+  ulPointer.innerHTML = `
+  <li><strong>Type</strong></li>
+        <li><strong>Fuel</strong></li>
+        <li><strong>Passengers</strong></li>
+        <li><strong>Stops</strong></li>
+        <li><strong>OwnedBy</strong></li>
+        <li><strong>Electric</strong></li>
+        <li><strong>Tandem</strong></li>
+  `;
+
   arr.forEach((each) => {
     
-    if(each.stops===undefined){
-      each.stops = " ";
-    }
-    if(each.passengers===undefined){
-      each.passengers = " ";
-    }
-    if(each.fuel===undefined){
-      each.fuel = " ";
-    }
-    if(each.ownedBy===undefined){
-      each.ownedBy = " ";
-    }
-    if(each.isElectric===undefined){
-      each.isElectric = " ";
-    }
-    if(each.isTandem===undefined){
-      each.isTandem = " ";
-    }
+    // if(each.stops===undefined){
+    //   each.stops = " ";
+    // }
+    // if(each.passengers===undefined){
+    //   each.passengers = " ";
+    // }
+    // if(each.fuel===undefined){
+    //   each.fuel = " ";
+    // }
+    // if(each.ownedBy===undefined){
+    //   each.ownedBy = " ";
+    // }
+    // if(each.isElectric===undefined){
+    //   each.isElectric = " ";
+    // }
+    // if(each.isTandem===undefined){
+    //   each.isTandem = " ";
+    // }
 
     ulPointer.innerHTML += `<li style="background-color:rgba(0, 0, 0, 0.2);">${each.type}</li>`;
-    ulPointer.innerHTML += `<li>${each.fuel}</li>`;
-    ulPointer.innerHTML += `<li>${each.passengers}</li>`;
-    ulPointer.innerHTML += `<li>${each.stops}</li>`;
-    ulPointer.innerHTML += `<li>${each.ownedBy}</li>`;
-    ulPointer.innerHTML += `<li>${each.isElectric}</li>`;
-    ulPointer.innerHTML += `<li>${each.isTandem}</li>`;
+    ulPointer.innerHTML += `<li>${each.fuel ?? "-"}</li>`; //Nullish coalescing operator (??)
+    ulPointer.innerHTML += `<li>${each.passengers ?? "-"}</li>`;
+    ulPointer.innerHTML += `<li>${each.stops ?? "-"}</li>`;
+    ulPointer.innerHTML += `<li>${each.ownedBy ?? "-"}</li>`;
+    ulPointer.innerHTML += `<li>${each.isElectric ? "X" : ""}</li>`;   //<--- super kompakt if statement!! / ternary operator
+    ulPointer.innerHTML += `<li>${each.isTandem ? "X" : ""}</li>`;
 
   });
   console.log(arr);
