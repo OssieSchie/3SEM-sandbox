@@ -13,13 +13,24 @@ const texts = {
     ],
   },
 };
-const locale = "da";
-//let locale = "da";
 
-// console.log(texts.de.texts[0].text);
+// document.querySelector("#language").addEventListener("change", (event)=> locale = event.target.value);
 
-// console.log(texts["da"].texts[0].text);
+window.addEventListener("load", ()=>{
+  let locale = "da";
+  texts[locale].texts.forEach((each) => {
+    document.querySelector(each.location).textContent = each.text;
+  });  
+});
 
-texts[locale].texts.forEach((each) =>{
-  console.log(each);
-})
+
+// texts[locale].texts.forEach((each) =>{
+//   document.querySelector(each.location).textContent = each.text;
+// })
+
+document.querySelector("#language").addEventListener("change", (event) => {
+  let locale = event.target.value;
+  texts[locale].texts.forEach((each) => {
+    document.querySelector(each.location).textContent = each.text;
+  });
+});
