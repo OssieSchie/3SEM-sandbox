@@ -1,0 +1,23 @@
+:root{
+
+}
+body{
+    background-color: var(--bg);
+    color: var(--textColor)
+}
+
+/* -------------------- */
+[data-theme="light"]{
+    --bg: white;
+    --textColor: darkgrey;
+}
+
+[data-theme="dark"]{
+    --bg: black;
+    --textColor:white;
+}
+
+[data-theme="hawaii"]{
+    --bg: orange;
+    --textColor:rgb(35, 173, 153);
+}

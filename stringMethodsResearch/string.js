@@ -30,9 +30,12 @@
 //------------------------------------------------------
 
 const fullName = "Peter Heronimous Lind";
-const firstName = fullName.substring(fullName.indexOf("P"),5);
-const middleName = fullName.substring(fullName.indexOf("H"),16);
-const lastName = fullName.substring(fullName.indexOf("L"));
+const firstName = fullName.substring(0, fullName.indexOf(" "));
+const middleName = fullName.substring(fullName.indexOf(" ") + 1, fullName.lastIndexOf(" "));
+const lastName = fullName.substring(fullName.lastIndexOf(" ") + 1);
+// const firstName = fullName.substring(0, fullName.indexOf(" "));
+// const middleName = fullName.substring(fullName.indexOf("H"),16);
+// const lastName = fullName.substring(fullName.indexOf("L"));
 
 console.log(firstName);
 console.log(middleName);
@@ -46,3 +49,4 @@ console.log(splitter.slice(0,2) + splitter.charAt(2).toUpperCase() + splitter.sl
 
 const splitter2 = "John Olsen Jadda Jadda";
 console.log(splitter2.charAt(0).toUpperCase() + splitter2.slice(1).toLowerCase())
+         
