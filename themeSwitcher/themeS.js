@@ -2,3 +2,8 @@
 
 //document.querySelector("#language").addEventListener("change", (event) => {
 
+document.querySelector("#theme-select").addEventListener("change", changeTheme);
+
+function changeTheme(){
+    document.querySelector("body").dataset.theme = event.target.value;
+}

@@ -1,23 +1,82 @@
 :root{
 
 }
+
 body{
     background-color: var(--bg);
-    color: var(--textColor)
+    color: var(--textColor);
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+body p{
+    font-size: 200%;
+}
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    border-bottom: solid var(--textColor) 1px;
+    padding: 1rem;
+    width: 80vw;
+}
+
+header h1{
+    font-size: 400%;
+    font-family: monospace;
+    grid-column: 2/3;
+    justify-self: center;
+    margin: 0;
+}
+
+main{
+    background-color: var(--mainBg);
+    width: 90cqw;
+    height: 100cqh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#switchBox{
+    grid-column: 3/4;
+    justify-self: right;
+    
+}
+
+footer{
+    border-top: solid var(--textColor) 1px;
+    width: 80vw;
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--footerBg);
 }
 
 /* -------------------- */
 [data-theme="light"]{
     --bg: white;
-    --textColor: darkgrey;
+    --textColor: rgb(75, 71, 71);
+    --footerBg:rgb(184, 204, 245);
+    --mainBg: rgb(173, 186, 212);
 }
 
 [data-theme="dark"]{
     --bg: black;
     --textColor:white;
+    --footerBg:rgb(47, 48, 51);
+    --mainBg: rgb(23, 24, 26);
 }
 
 [data-theme="hawaii"]{
     --bg: orange;
-    --textColor:rgb(35, 173, 153);
+    --textColor:rgb(16, 117, 102);
+    --footerBg:rgb(235, 172, 77);
+    --mainBg: rgb(240, 125, 32);
 }
