@@ -1,0 +1,25 @@
+#ball{
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: orange;
+    width: 8rem;
+}
+
+.ani{
+    animation-iteration-count: 100;
+    animation-direction: alternate;
+    animation-name: ani;
+    animation-timing-function: linear;
+    animation-duration: 10ms;
+}
+
+@keyframes ani{
+    from{
+        background-color: orange;
+        transform: scale(1);
+    }
+    to{
+        background-color: red;
+        transform: scale(1.2);
+    }
+}
