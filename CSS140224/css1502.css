@@ -1,0 +1,14 @@
+[data-split]{
+    span{
+        display: inline-block;
+        white-space: break-spaces;
+        animation: jump 1s infinite;
+        animation-delay: calc(var(--i) * 0.1s);
+    }
+}
+
+@keyframes jump{
+    50%{
+        translate: 0 50%;
+    }
+}

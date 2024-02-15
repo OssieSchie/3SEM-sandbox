@@ -1,0 +1,14 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: hsl(var(--x) var(--x) 60%);
+}
+
+h2{
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    color:hsl(calc(var(--x2)/2), calc(var(--y2)/2), 60%);
+    
+}
+/* ^NOT WORKING^ */
