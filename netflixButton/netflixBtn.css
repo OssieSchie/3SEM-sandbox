@@ -13,6 +13,7 @@ body{
     border-radius: 10px;
     overflow: clip;
     isolation: isolate;
+    padding: 5px 10px 5px 10px;
 }
 
 p{

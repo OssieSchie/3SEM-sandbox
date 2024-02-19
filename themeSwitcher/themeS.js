@@ -5,5 +5,23 @@
 document.querySelector("#theme-select").addEventListener("change", changeTheme);
 
 function changeTheme(){
-    document.querySelector("body").dataset.theme = event.target.value;
+    let theme = event.target.value;
+
+    document.querySelector("body").dataset.theme = theme;
+
+    if(theme === "light"){
+        localStorage.setItem("theme", "light")
+    }else if(theme === "dark"){
+        localStorage.setItem("theme", "dark")
+    }else{
+        localStorage.setItem("theme", "hawaii")
+    }
 }
+
+function setTheme(){
+    let getTheme = localStorage.getItem("theme");
+    document.querySelector("body").dataset.theme = getTheme;
+}
+
+setTheme();
+
