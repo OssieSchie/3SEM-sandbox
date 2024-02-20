@@ -8,6 +8,25 @@
     <script type="module" src="toDo.js"></script>
 </head>
 <body>
+    <template id="toDoListe">
+       <div>
+            <p data-field="taskString">task filler</p>
+            <h4 data-field="taskAmount">default value</h4>
+            <button data-field="taskBtn">Finish</button> 
+       </div>     
+    </template>
+
+
+    <div id="input">
+        <h3>Create new task</h3>
+        <label for="task">To Do</label>
+        <input type="text" name="text" id="text">
     
+        <label for="amount">Amount</label>
+        <input type="number" name="amount" id="amount" min="0">
+        <button id="createToDo">Create</button>
+    </div>
+
+    <div id="tasks"></div>
 </body>
 </html>

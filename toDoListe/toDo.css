@@ -1,0 +1,56 @@
+/* #tasks{
+    background-color: yellow;
+}
+ */
+#input{
+    border: solid black 1px;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background-color: rgb(190, 190, 238);
+    font-family: monospace;
+    h3{
+        align-self: center;
+        margin: 0;
+    }
+    label{
+        margin-top: 10px;
+    }
+    button{
+        align-self: center;
+        height: 35px;
+        width: 90px;
+        margin-top: 10px;
+    }
+}
+#tasks div{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(228, 209, 105);
+    width: 300px;
+    min-height: 100px;
+    max-height: fit-content;
+    padding: 10px;
+    margin: 10px;
+
+    overflow: scroll; 
+    /* ^semi temp fix^ - dur ikke med lange uafbrudte ord */
+
+   /*  p{
+        max-width: 300px;
+    } */
+    button{
+        width: 60px;
+        height: 30px;
+        justify-self: bottom;
+        align-self: center;
+        background: rgb(214, 174, 87);
+        color: rgb(134, 83, 36);
+        border: solid rgb(134, 83, 36) 2px;
+        border-radius: 10px;
+        font-family: monospace;
+        font-weight: bold;
+    }
+}
