@@ -1,5 +1,18 @@
 const taskArray = [];
 
+/* window.addEventListener("load", pushLocal);
+
+function pushLocal(){
+    //console.log(taskArray);
+   // console.log(taskArray);
+    if (localStorage.getItem("Task Array")){
+        //let localArray = localStorage.getItem("Task Array");
+        
+        taskArray.push(localStorage.getItem("Task Array"));
+        prepareList();
+    }
+} */
+
 /* const taskTemplate ={
     task: "default task",
     amount: 0,
@@ -8,10 +21,12 @@ const taskArray = [];
 } */
 
 
+
 document.querySelector("#createToDo").addEventListener("click", makeNewTask);
 
 
 function makeNewTask(){
+    console.log("makeTask");
     const userText = document.querySelector("#text").value;
     const genId = Math.floor(Math.random()*1000);
     
@@ -40,16 +55,15 @@ function makeNewTask(){
     console.table(taskArray);
 }
 
-//problemer med at læse/parse fra localStorage 
-
 function prepareList(){
     document.querySelector("#tasks").innerHTML = "";
 
-    const localArray = localStorage.getItem("taskArray");             //!!!!!!!!!!!!!!!!!!!!!!!!!!! problem areal
-
+    const localArray = localStorage.getItem("Task Array");
+    
+    const parsedArray = JSON.parse(localArray);
     //const parseLocalArray = JSON.parse(localArray);
     
-    JSON.parse(localArray).forEach(displayTask);
+    parsedArray.forEach(displayTask);
 }
 
 //som den er nu appender displayTask direkte fra makeNewTask, ergo tager den ikke fra local storage. makeNewTask skal KUN pushe til local storage, og prepareTask Skal kun hente data fra localStorage
