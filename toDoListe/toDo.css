@@ -2,6 +2,33 @@
     background-color: yellow;
 }
  */
+main{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#lCol, #mCol, #rCol{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 90vh;
+}
+
+#mCol h2, #rCol h2{
+    font-family: Arial, Helvetica, sans-serif;
+}
+#mCol p, #rCol p{
+   font-family: monospace;
+}
+
+#mCol h4, #rCol h4{
+   font-family: monospace;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
 #input{
     border: solid black 1px;
     border-radius: 10px;
@@ -25,6 +52,12 @@
         margin-top: 10px;
     }
 }
+
+#tasks, #finishedTasks{
+    overflow-y: scroll;
+}
+
+
 #tasks div{
     display: flex;
     flex-direction: column;
@@ -34,11 +67,12 @@
     max-height: fit-content;
     padding: 10px;
     margin: 10px;
-
-    overflow: scroll; 
+    
+    overflow-y: scroll; 
+    overflow-x: clip;
     /* ^semi temp fix^ - dur ikke med lange uafbrudte ord */
-
-   /*  p{
+    
+    /*  p{
         max-width: 300px;
     } */
     button{
@@ -53,4 +87,41 @@
         font-family: monospace;
         font-weight: bold;
     }
+    /* #toDoBtns{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        max-height: 50px;
+    } */
+}
+
+#finishedTasks div{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(126, 228, 105);
+    width: 300px;
+    min-height: 100px;
+    max-height: fit-content;
+    padding: 10px;
+    margin: 10px;
+    
+    overflow-y: scroll; 
+    overflow-x: clip;
+   /*  #toDoBtns{
+        visibility: hidden;
+    }
+    button{
+        display: none;
+    } */
+}
+
+#tasks div #toDoBtns{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-height: 50px;
 }

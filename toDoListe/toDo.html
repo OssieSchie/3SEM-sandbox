@@ -9,24 +9,43 @@
 </head>
 <body>
     <template id="toDoListe">
-       <div>
+       <div data-id="defaultID">
             <p data-field="taskString">task filler</p>
             <h4 data-field="taskAmount">default value</h4>
-            <button data-field="taskBtn">Finish</button> 
+            <div id="toDoBtns">
+                <button data-type="button" data-field="finBtn">Finish</button> 
+                <button data-type="button" data-field="delBtn">Delete</button> 
+            </div>
        </div>     
     </template>
-
-
-    <div id="input">
-        <h3>Create new task</h3>
-        <label for="task">To Do</label>
-        <input type="text" name="text" id="text">
+    <main>
+        <div id="lCol">
+            <div id="input">
+                <h3>Create new task</h3>
+                <label for="task">To Do</label>
+                <input type="text" name="text" id="text">
+            
+                <label for="amount">Amount</label>
+                <input type="number" name="amount" id="amount" min="0p">
+                <button id="createToDo">Create</button>
+            </div>
     
-        <label for="amount">Amount</label>
-        <input type="number" name="amount" id="amount" min="0p">
-        <button id="createToDo">Create</button>
-    </div>
+        </div>
+        <div id="mCol">
+            <h2>Tasks</h2>
+            <div id="tasks">
+            </div>
+    
+        </div>
+        <div id="rCol">
+            <h2>Finished Tasks</h2>
+            <div id="finishedTasks">
 
-    <div id="tasks"></div>
+            </div>
+        </div>
+
+    </main>
+
+
 </body>
 </html>
