@@ -2,16 +2,30 @@
     background-color: yellow;
 }
  */
+ body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+ }
 main{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
+    width: 60vw;
+    max-height: 90vh;
 }
 
-#lCol, #mCol, #rCol{
+#lCol, #mCol{
     display: flex;
     flex-direction: column;
     align-items: center;
     max-height: 90vh;
+}
+#rCol{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 61vh;
 }
 
 #mCol h2, #rCol h2{
@@ -30,6 +44,7 @@ button:hover{
 }
 
 #input{
+    margin-top: 70px;
     border: solid black 1px;
     border-radius: 10px;
     padding: 10px;
@@ -102,7 +117,7 @@ button:hover{
     flex-direction: column;
     background-color: rgb(126, 228, 105);
     width: 300px;
-    min-height: 100px;
+    min-height: 120px;
     max-height: fit-content;
     padding: 10px;
     margin: 10px;

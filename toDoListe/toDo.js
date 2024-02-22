@@ -146,7 +146,7 @@ function prepareFinishedList(){
 }
 
 function displayFinishedTask(showTask){
-    const clone = document.querySelector("template#toDoListe").content.cloneNode(true);
+    const clone = document.querySelector("template#finishedListe").content.cloneNode(true);
     
     clone.querySelector("[data-field=taskString]").textContent = showTask.name;
     clone.querySelector("[data-field=taskAmount]").textContent = showTask.amount;
