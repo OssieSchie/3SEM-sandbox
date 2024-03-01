@@ -54,7 +54,11 @@ h2{
 #interesse{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
+    background-color: rgb(64, 58, 78);
+    margin: auto;
+    max-width: 80%;
+    border-radius: 25px;
 }
 
 /* .tile{
@@ -86,11 +90,18 @@ h2{
     width: clamp(200px, 600px, 100%);
     padding-right: 40px;
     /* border-right: solid rgba(255, 255, 255, 0.3) 1px;; */
+    margin: 0 auto 0 auto;
 }
 
-/* #osvaldIntro{
-    background-color:rgb(64, 58, 78);
-} */
+#hoverTileText p:nth-of-type(2){
+    font-weight: bold;
+}
+#osvaldIntro{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 #img{
     position: relative;
@@ -122,6 +133,22 @@ h2{
     display: flex;
     flex-direction: column;
     margin: 0 auto 0 auto;
+    padding-bottom: 100px;
+}
+
+#links{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-self: center;
+    margin-bottom: 5vh;
+    padding: 16px;
+    border-bottom: solid rgb(247, 239, 233) 1px;
+    a{
+        width: 64px;
+        height: 64px;
+    }
 }
 
 hr{
@@ -172,14 +199,19 @@ a>img{
 }
 }
 
-#olesHus>a{
+#olesHus{
+    a{
+        max-width: 300px;
+    }
     h2{
         position: absolute;
         top: 40%;
         left: 10%;
         filter: drop-shadow(0px 0px 10px #000000);
     }
-
+    p{
+        margin: 0 auto 0 auto;
+    }
 }
 
 #vildMad{
@@ -206,15 +238,109 @@ a>img{
 }
 
 #javaGuitars{
+    a{
+        max-width: 300px;
+    }
     h2{
         position: absolute;
         top: 40%;
         left: 4%;
         filter: drop-shadow(0px 0px 10px #000000);
     }
+    p{
+        margin: 0 auto 0 auto;
+    }
 
 }
 
 #CA{
+    a{
+        max-width: 300px;
+        img{
+            filter: brightness(0.8);
+        }
+    }
+    h2{
+        position: absolute;
+        top: 40%;
+        left: 13%;
+        filter: drop-shadow(0px 0px 8px #000);
+    }
+    p{
+        margin: 0 auto 0 auto;
+    }
+}
 
+@media (max-width:1000px) {
+    body{
+        overflow-y: scroll;
+        max-height: unset;
+        height: unset;
+    }
+    
+    main{
+        grid-template-columns: none;
+        grid-template-rows: 1fr auto;
+        max-height: unset;
+        height: unset;
+    }
+
+    #left{
+        width:clamp(300px, 50%, 500px);
+        margin: 0 auto 0 auto;
+    }
+
+    hr{
+        width: 70%;
+    }
+
+    #interesse{
+        flex-direction: column;
+        align-items: center;
+        padding: 0 15px 15px 15px;
+    }
+
+    .project{
+        flex-direction: column;
+        max-height: unset;
+    }
+
+    #olesHus, #vildMad, #javaGuitars, #CA{
+        flex-direction: column;
+        max-width: 100%;
+        a{
+            max-width: 100%;
+            img{
+                aspect-ratio: 1/1;
+            }
+        }
+        p{
+            padding: 10px;
+        }
+    }
+
+    #CA{
+        align-items: center;
+        img{
+            max-height: 400px;
+        }
+        a{
+            max-height: 400px;
+        }
+        h2{
+            left: 48%;
+        }
+    }
+
+    #olesHus{
+
+    }
+
+    #vildMad{
+
+    }
+
+    #javaGuitars{
+
+    }
 }
