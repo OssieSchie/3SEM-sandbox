@@ -16,23 +16,39 @@ main{
     height: 90cqh;
 }
 
-p, h3{
+p, h3, h2{
     color: rgb(247, 239, 233);
     font-family: monospace;
-    font-size: 17px;
+    /* font-size: 17px; */
 }
+
+p{
+    font-size: 16px;
+}
+h3{
+    font-size: 20px;
+    margin: 0;
+}
+h2{
+    font-size: 24px;
+}
+
 #right{
+    width: 90%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 45px;
     overflow-y: scroll;
     align-content: center;
+    margin: 0 auto 0 auto;
 }
 #left{
     height: 100%;
     display: flex;
     flex-direction: column;
     /* justify-content: space-evenly; */
+    background-color:rgb(64, 58, 78);
+    border-radius: 25px;
 }
 
 #interesse{
@@ -69,12 +85,16 @@ p, h3{
     justify-content: space-around;
     width: clamp(200px, 600px, 100%);
     padding-right: 40px;
-    border-right: solid rgba(255, 255, 255, 0.3) 1px;;
+    /* border-right: solid rgba(255, 255, 255, 0.3) 1px;; */
 }
+
+/* #osvaldIntro{
+    background-color:rgb(64, 58, 78);
+} */
 
 #img{
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     img{
         aspect-ratio: 1/1;
         max-width: 100%;
@@ -92,13 +112,109 @@ p, h3{
     /* margin: 0; */
     padding: 10px;
     border-radius: 25px;
-    background-color: rgb(64, 58, 78);
-    border: solid rgb(33, 28, 44) 4px;
+    background-color: rgb(33, 28, 44);
+    border: solid rgb(64, 58, 78) 4px;
     font-weight: bold;;
+}
+
+#imgText{
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 0 auto;
+}
+
+hr{
+    width: 30%;
+    color: rgb(247, 239, 233);
+}
+
+#skills{
+    max-width: 80%;
+    align-self: center;
 }
 
 #introText{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#explainer{
+    margin-bottom: 61px;
+}
+
+#projectList{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    max-width: 80%;
+    margin: 0 auto 0 auto;
+}
+
+.project{
+    position: relative;
+    max-height: 300px;
+    display: flex;
+    flex-direction: row;
+    
+    /* justify-content: space-between; */
+    background-color: rgb(64, 58, 78);
+    border-radius: 25px;
+    overflow: clip;
+p{
+    align-self: center;
+}
+
+a>img{
+    aspect-ratio: 1/1;
+    max-height: 100%;
+}
+}
+
+#olesHus>a{
+    h2{
+        position: absolute;
+        top: 40%;
+        left: 10%;
+        filter: drop-shadow(0px 0px 10px #000000);
+    }
+
+}
+
+#vildMad{
+    flex-direction: column;
+    max-height: 400px;
+    a{
+        display: flex;
+        flex-direction: row;
+        height: 320px;
+        justify-content: center;
+        img{
+            aspect-ratio: unset;
+        }
+        h2{
+            position: absolute;
+            top: 40%;
+            left: 45%;
+            filter: drop-shadow(0px 0px 10px #000000);
+        }
+    }
+    p{
+        margin: 25px 0 25px 0;
+    }
+}
+
+#javaGuitars{
+    h2{
+        position: absolute;
+        top: 40%;
+        left: 4%;
+        filter: drop-shadow(0px 0px 10px #000000);
+    }
+
+}
+
+#CA{
+
 }
