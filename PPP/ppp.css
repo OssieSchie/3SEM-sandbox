@@ -1,7 +1,3 @@
-/* *{
-    border: solid rgba(255, 255, 255, 0.2) 1px;
-} */
-
 body{
     padding: 20px;
     background-color: rgb(33, 28, 44);
@@ -19,7 +15,6 @@ main{
 p, h3, h2{
     color: rgb(247, 239, 233);
     font-family: monospace;
-    /* font-size: 17px; */
 }
 
 p{
@@ -47,7 +42,6 @@ h2{
     height: 100%;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-evenly; */
     background-color:rgb(64, 58, 78);
     border-radius: 25px;
     margin: 0 auto 0 auto;
@@ -85,7 +79,6 @@ h2{
     justify-content: space-around;
     width: clamp(200px, 600px, 100%);
     padding-right: 40px;
-    /* border-right: solid rgba(255, 255, 255, 0.3) 1px;; */
     margin: 0 auto 0 auto;
 }
 
@@ -112,11 +105,9 @@ h2{
     position: absolute;
     max-width: fit-content;
     bottom: -20px;
-    /* left: 70%; */
     left: 0;
     right: 0;
     margin: auto;
-    /* margin: 0; */
     padding: 10px;
     border-radius: 25px;
     background-color: rgb(33, 28, 44);
@@ -184,28 +175,28 @@ hr{
     max-height: 300px;
     display: flex;
     flex-direction: row;
-    
-    /* justify-content: space-between; */
     background-color: rgb(64, 58, 78);
     border-radius: 25px;
     overflow: clip;
-p{
-    align-self: center;
-}
 
-a>img{
-    aspect-ratio: 1/1;
-    max-height: 100%;
-}
-a{
-    h2{
-        border-bottom: solid rgb(247, 239, 233) 1px;
+    p{
+        align-self: center;
     }
-    h2:hover{
-        transform: scale(1.08);
-        transition: 0.1s linear;
+
+    a>img{
+        aspect-ratio: 1/1;
+        max-height: 100%;
     }
-}
+
+    a{
+        h2{
+            border-bottom: solid rgb(247, 239, 233) 1px;
+        }
+        h2:hover{
+            transform: scale(1.08);
+            transition: 0.1s linear;
+        }
+    }
 }
 
 #olesHus{
@@ -328,8 +319,14 @@ a{
         }
     }
 
-    #CA{
+    #CA, #olesHus, #vildMad, #javaGuitars{
         align-items: center;
+        img{
+            border-radius: 10px;
+        }
+    }
+
+    #CA{
         img{
             max-height: 400px;
         }
@@ -342,14 +339,26 @@ a{
     }
 
     #olesHus{
-
+        h2{
+            left: 42%;
+        }
     }
-
+    
+    
     #vildMad{
-
+        img{
+            border-radius: 0;
+        }
+        h2{
+            left: 1%;
+        }
+        
     }
-
+    
     #javaGuitars{
+        h2{
+            left: 33%;
+        }
 
     }
 }
